@@ -1545,6 +1545,11 @@ def render_question(elt, context, lastsubmit, wrap=True):
             % (q["qtype"], name)
         )
 
+    # Give us flexibility to clear cache
+    args.update({
+        "context_passthrough": context
+    })
+
     out += '\n<div id="%s_rendered_question">\n' % name
     out += context["csm_language"].source_transform_string(
         context, args.get("csq_prompt", "")
