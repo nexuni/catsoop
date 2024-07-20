@@ -32,6 +32,7 @@ from . import loader
 from . import cslog
 from . import base_context
 
+collections.Callable = collections.abc.Callable
 importlib.reload(base_context)
 
 _nodoc = {"timedelta", "OrderedDict"}
